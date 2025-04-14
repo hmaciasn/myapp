@@ -8,47 +8,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Widgets Básicos',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ejemplo Widgets Flutter'),
-        ),
-        body: Center(
-          child: Column(
+      title: 'Ciene para todos',
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Imagen de fondo desde una URL
+          Image.network(
+            'https://th.bing.com/th/id/OIP.MoIvqiX_WOD6ITkXRL8c3gHaE8?rs=1&pid=ImgDetMain',
+            fit: BoxFit.cover,
+          ),
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Texto con Widget Text'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.star, color: Colors.blue),
-                  Text('Fila con Row')
-                ],
+              Text(
+                'Bienvenido a',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Container(
-                padding: EdgeInsets.all(20),
-                color: Colors.amber,
-                child: Text('Container con Padding'),
-              ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: 150,
-                    height: 150,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
-                  ),
-                  Text('Stack de Widgets'),
-                ],
+              SizedBox(height: 10),
+              Text(
+                'Cine para todos',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
