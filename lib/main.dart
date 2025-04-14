@@ -21,7 +21,6 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // Imagen de fondo desde una URL
           Image.network(
             'https://th.bing.com/th/id/OIP.MoIvqiX_WOD6ITkXRL8c3gHaE8?rs=1&pid=ImgDetMain',
             fit: BoxFit.cover,
